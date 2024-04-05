@@ -1,18 +1,20 @@
-<tool id="motus_profiler" name="mOTUs_profiler" version="3.0.1" profile="21.05">
+<tool id="motus_profiler" name="mOTUs_profiler" version="3.1.0" profile="21.05">
     <description>performs taxonomic profiling of metagenomics and metatrancriptomics samples</description>
     <requirements>
-        <requirement type="package" version="3.0.1" >mOTUs</requirement>
+        <requirement type="package" version="3.1" >mOTUs</requirement>
+        <requirement type="package" version="1.34">tar</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[   
         #if $db.db_source == 'cached'
             #set $DATABASE_DIR=$db.db_cached.fields.path
         #else
             #set $database_path = $db.database
+            file $database_path &&
             mkdir database_dir &&
-            tar -zxvf '$database_path' -C database_dir/ &&
-            #set $DATABASE_DIR = 'database_dir'
+            tar -xvf '$database_path' -C database_dir/ &&
+            #set $DATABASE_DIR = 'database_dir/db_mOTU' ##the actual DB folder in the archive called db_mOTU
         #end if
-        echo "Database Directory: $DATABASE_DIR"
+        echo "Database Directory:" $DATABASE_DIR  &&
 
         motus profile 
         -t \${GALAXY_SLOTS:-8} 
@@ -58,7 +60,7 @@
             #end if
         #end if
         #if $additional_options.advanced == "advanced"
-            #if $additional_options.ref-mOTUs_only
+            #if $additional_options.ref_motus_only
                 -e 
             #end if
             #if $additional_options.full_species_name
@@ -67,7 +69,7 @@
             #if $additional_options.result_as_counts
                 -c
             #end if
-            #if additional_options.ncbi_taxonomy_ids
+            #if $additional_options.ncbi_taxonomy_ids
                 -p
             #end if
             #if $additional_options.biom_format
@@ -79,13 +81,14 @@
             #if $additional_options.full_rank_taxonomy
                 -q
             #end if
-            #if $additional_options.taxonomic_level_together_metaphlanType
+            #if $additional_options.taxonomic_level_metaphlantype
                 -A
             #end if
             #if $additional_options.taxonomic_level
                 -k
             #end if
         #end if
+        > '${mOTUs_profile}'
     ]]></command>
     <inputs>
         <section name="inputs" title="Inputs" expanded="true">
@@ -135,7 +138,7 @@
                     </param>
                 </when>
                 <when value="history">
-                    <param name="database" type="data" format="tar.gz" label="Database from history" help="Custom database or other version of mOTUs database from link: https://zenodo.org/records/5140350"/>
+                    <param name="database" type="data" format="tar" label="Database from history" help="Custom database or other version of mOTUs database from link: https://zenodo.org/records/5140350"/>
                 </when>
             </conditional>
         </section>
@@ -216,18 +219,19 @@
                 <conditional name="input_type">
                     <param name="selector" value="reads"/>
                     <conditional name="reads_type">
-                        <param name="selector" value="paired"/>
-                        <param name="forward_reads" ftype="fastq.gz" value="test1_single.fastq"/>
-                        <param name="reverse_reads" ftype="fastq.gz" value="test1_single.fastq"/> 
+                        <param name="selector" value="single"/>
+                        <param name="unpaired_reads" ftype="fastq.gz" value="test1_single.fastq"/>
                     </conditional>
                 </conditional>
                 <conditional name="db">
                     <!-- Local db -->
                     <param name="db_source" value="history"/>
-                    <param name="database" value="db_mOTU_v3.0.1.tar.gz"/>
+                    <param name="database" location="https://zenodo.org/record/7778108/files/db_mOTU_v3.1.0.tar.gz"/>
+                    <!-- <param name="database" value="db_mOTU_v3.1.0.tar.gz"/> -->
+
                 </conditional>
             </section>
-            <output name="mOTUs_profile" ftype="txt" value="test1.motus">
+            <output name="mOTUs_profile" ftype="txt" value="test1.motus" compare="diff" lines_diff="5">
             </output>
         </test>
     </tests>
