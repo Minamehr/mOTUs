@@ -73,12 +73,12 @@
         motus merge [options]
 
         Input options:
-            -i  FILE[,FILE] list of mOTU profiles to merge (comma separated)
-            -d  FILE[,FILE] merge all files in the directory DIR
-            -a  STR[,STR]   add pre-computed profiles from different environmental samples
-                            Values: [all, air, bioreactor, bee, cat,
-                            cattle, chicken, dog, fish, freshwater, human,
-                            marine, mouse, pig, sheep, soil, termite, wastewater]
+            -i  FILE    list of mOTU profiles to merge (comma separated)
+            -d  FILE    merge all files in the directory DIR
+            -a  STR     add pre-computed profiles from different environmental samples
+                        Values: [all, air, bioreactor, bee, cat,
+                        cattle, chicken, dog, fish, freshwater, human,
+                        marine, mouse, pig, sheep, soil, termite, wastewater]
         Output options:
             -o  FILE    output file name [stdout]
             -B  FILE    print result in BIOM format
