@@ -4,7 +4,7 @@
         <import>macros.xml</import>
     </macros>
     <expand macro="biotools"/>
-    <expand macro="requirments"/>
+    <expand macro="requirements"/>
     <command detect_errors="exit_code"><![CDATA[
     motus merge
     #if $input_options.input_source == "files"
@@ -86,5 +86,5 @@
             -v  INT verbosity level: 1=error, 2=warning, 3=message, 4+=debugging [3]
 
     ]]></help>
-    <expand macro="citation"/>
+    <expand macro="citations"/>
 </tool>
