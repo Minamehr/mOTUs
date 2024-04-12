@@ -177,7 +177,7 @@
         <data name="mOTUs_profile" format="txt" label="${tool.name} on ${on_string}: Taxonomic Profile"/>
     </outputs>
     <tests>
-        <test expect_num_outputs="1">
+        <test>
             <section name="inputs">
                 <conditional name="input_type">
                     <param name="selector" value="reads"/>
@@ -187,13 +187,16 @@
                     </conditional>
                 </conditional>
                 <conditional name="db">
-                    <!-- Local db -->
                     <param name="db_source" value="history"/>
                     <param name="database" location="https://zenodo.org/record/7778108/files/db_mOTU_v3.1.0.tar.gz"/>
-                    <!-- <param name="database" value="db_mOTU_v3.1.0.tar.gz"/> -->
                 </conditional>
             </section>
-            <output name="mOTUs_profile" ftype="txt" value="test1.motus" compare="diff" lines_diff="5">
+            <output name="mOTUs_profile" ftype="txt">
+                <assert_contents>
+                    <has_text_matching expression=".*#consensus_taxonomy.*"/>
+                    <has_n_lines n="34344" delta="5"/>
+                    <has_size value="2300000" delta="100000" />
+                </assert_contents>
             </output>
         </test>
     </tests>
