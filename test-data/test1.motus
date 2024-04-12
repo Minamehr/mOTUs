@@ -1,6 +1,7 @@
+/home/mina/miniconda3/envs/motu-env/lib/python3.9/site-packages/motus/db_mOTU
 # git tag version 3.1.0 |  motus version 3.1.0 | map_tax 3.1.0 | gene database: nr3.1.0 | calc_mgc 3.1.0 -y insert.scaled_counts -l 75 | calc_motu 3.1.0 -k mOTU -C no_CAMI -g 3 | taxonomy: ref_mOTU_3.1.0 meta_mOTU_3.1.0
-# call: python /usr/local/bin/motus profile -t 1 -n  -db database_dir/db_mOTU -s /tmp/tmpg7l8u7w7/files/0/c/8/dataset_0c8dc06f-1949-4c3f-9951-c9511fc288c3.dat
-#consensus_taxonomy	
+# call: python /home/mina/miniconda3/envs/motu-env/bin/motus profile -s test1_single.fastq
+#consensus_taxonomy	unnamed sample
 Leptospira alexanderi [ref_mOTU_v31_00001]	0.0000000000
 Leptospira weilii [ref_mOTU_v31_00002]	0.0000000000
 Chryseobacterium sp. [ref_mOTU_v31_00004]	0.0000000000
@@ -40,7 +41,7 @@ Vibrio sinaloensis [ref_mOTU_v31_00037]	0.0000000000
 Vibrio orientalis [ref_mOTU_v31_00038]	0.0000000000
 Vibrio tubiashii [ref_mOTU_v31_00039]	0.0000000000
 Vibrio bivalvicida [ref_mOTU_v31_00040]	0.0000000000
-Vibrio tubiashii [ref_mOTU_v31_00041]	0.0048217975
+Vibrio tubiashii [ref_mOTU_v31_00041]	0.0230587388
 Vibrio brasiliensis [ref_mOTU_v31_00042]	0.0000000000
 Vibrio galatheae [ref_mOTU_v31_00043]	0.0000000000
 Vibrio pacinii [ref_mOTU_v31_00044]	0.0000000000
@@ -199,7 +200,7 @@ Pseudomonas entomophila [ref_mOTU_v31_00197]	0.0000000000
 Pseudomonas putida [ref_mOTU_v31_00198]	0.0000000000
 Pseudomonas parafulva [ref_mOTU_v31_00199]	0.0000000000
 Pseudomonas monteilii [ref_mOTU_v31_00200]	0.0000000000
-Pseudomonas aeruginosa [ref_mOTU_v31_00201]	0.0235284890
+Pseudomonas aeruginosa [ref_mOTU_v31_00201]	0.0000000000
 Pseudomonas nitroreducens [ref_mOTU_v31_00202]	0.0000000000
 Pseudomonas nitroreducens [ref_mOTU_v31_00203]	0.0000000000
 Pseudomonas sp. ATCC 13867 [ref_mOTU_v31_00204]	0.0000000000
@@ -314,7 +315,7 @@ Streptococcus parasanguinis [ref_mOTU_v31_00312]	0.0000000000
 Streptococcus sp. F0442 [ref_mOTU_v31_00313]	0.0000000000
 Streptococcus equi [ref_mOTU_v31_00314]	0.0000000000
 Streptococcus pyogenes [ref_mOTU_v31_00315]	0.0000000000
-Streptococcus dysgalactiae [ref_mOTU_v31_00316]	0.0154071498
+Streptococcus dysgalactiae [ref_mOTU_v31_00316]	0.0736798763
 Streptococcus canis [ref_mOTU_v31_00317]	0.0000000000
 Enterococcus faecalis [ref_mOTU_v31_00318]	0.0000000000
 Enterococcus mundtii [ref_mOTU_v31_00319]	0.0000000000
@@ -559,10 +560,10 @@ Janthinobacterium sp. CG23_2 [ref_mOTU_v31_00560]	0.0000000000
 Orrella dioscoreae [ref_mOTU_v31_00561]	0.0000000000
 Castellaniella defragrans [ref_mOTU_v31_00562]	0.0000000000
 Hylemonella gracilis [ref_mOTU_v31_00563]	0.0000000000
-Megasphaera sp. [ref_mOTU_v31_00564]	0.0253500254
+Megasphaera sp. [ref_mOTU_v31_00564]	0.0000000000
 Megasphaera sp. [ref_mOTU_v31_00565]	0.0000000000
 Streptococcus anginosus [ref_mOTU_v31_00566]	0.0000000000
-Streptococcus anginosus [ref_mOTU_v31_00567]	0.3603920587
+Streptococcus anginosus [ref_mOTU_v31_00567]	0.0000000000
 Streptococcus anginosus [ref_mOTU_v31_00568]	0.0000000000
 Streptococcus anginosus [ref_mOTU_v31_00569]	0.0000000000
 Streptococcus anginosus [ref_mOTU_v31_00570]	0.0000000000
@@ -642,7 +643,7 @@ Streptomyces roseochromogenus [ref_mOTU_v31_00644]	0.0000000000
 Streptomyces sp. FXJ1.172 [ref_mOTU_v31_00645]	0.0000000000
 Streptomyces yokosukanensis [ref_mOTU_v31_00646]	0.0000000000
 Streptomyces sp. [ref_mOTU_v31_00647]	0.0000000000
-Streptomyces durhamensis [ref_mOTU_v31_00648]	0.0787891048
+Streptomyces durhamensis [ref_mOTU_v31_00648]	0.0000000000
 Streptomyces collinus [ref_mOTU_v31_00649]	0.0000000000
 Streptomyces cellostaticus [ref_mOTU_v31_00650]	0.0000000000
 Streptomyces griseochromogenes [ref_mOTU_v31_00651]	0.0000000000
@@ -751,7 +752,7 @@ Micromonospora nigra [ref_mOTU_v31_00753]	0.0000000000
 Streptomyces cattleya [ref_mOTU_v31_00754]	0.0000000000
 Rickettsia typhi [ref_mOTU_v31_00755]	0.0000000000
 Rickettsia prowazekii [ref_mOTU_v31_00756]	0.0000000000
-Chlamydia abortus [ref_mOTU_v31_00757]	0.0577969116
+Chlamydia abortus [ref_mOTU_v31_00757]	0.2765515643
 Chlamydia psittaci [ref_mOTU_v31_00758]	0.0000000000
 Flavobacteriaceae sp. [ref_mOTU_v31_00759]	0.0000000000
 Photorhabdus australis [ref_mOTU_v31_00760]	0.0000000000
@@ -1577,7 +1578,7 @@ Eikenella corrodens [ref_mOTU_v31_01587]	0.0000000000
 Eikenella sp. NML130454 [ref_mOTU_v31_01588]	0.0000000000
 Prevotella nigrescens [ref_mOTU_v31_01589]	0.0000000000
 Prevotella phocaeensis/oralis [ref_mOTU_v31_01590]	0.0000000000
-Streptococcus sanguinis [ref_mOTU_v31_01591]	0.0240761541
+Streptococcus sanguinis [ref_mOTU_v31_01591]	0.0000000000
 Streptococcus sanguinis [ref_mOTU_v31_01592]	0.0000000000
 Firmicutes sp. [ref_mOTU_v31_01593]	0.0000000000
 [Ruminococcus] gnavus [ref_mOTU_v31_01594]	0.0000000000
@@ -2780,7 +2781,7 @@ Corynebacterium diphtheriae [ref_mOTU_v31_02799]	0.0000000000
 Staphylococcus pasteuri [ref_mOTU_v31_02800]	0.0000000000
 Staphylococcus warneri [ref_mOTU_v31_02801]	0.0000000000
 Francisella philomiragia [ref_mOTU_v31_02802]	0.0000000000
-Francisella philomiragia/noatunensis [ref_mOTU_v31_02803]	0.0322241041
+Francisella philomiragia/noatunensis [ref_mOTU_v31_02803]	0.0000000000
 Rhodanobacter spathiphylli [ref_mOTU_v31_02804]	0.0000000000
 Rhodanobacter sp. [ref_mOTU_v31_02805]	0.0000000000
 Rhodanobacter fulvus [ref_mOTU_v31_02806]	0.0000000000
@@ -2917,7 +2918,7 @@ Rhodovulum sulfidophilum [ref_mOTU_v31_02936]	0.0000000000
 Rhodovulum sp. MB263 [ref_mOTU_v31_02937]	0.0000000000
 Rhodovulum sulfidophilum [ref_mOTU_v31_02938]	0.0000000000
 Bacillus marmarensis/pseudofirmus [ref_mOTU_v31_02939]	0.0000000000
-Nitratireductor aquibiodomus [ref_mOTU_v31_02941]	0.0161271100
+Nitratireductor aquibiodomus [ref_mOTU_v31_02941]	0.0000000000
 Nitratireductor aquibiodomus [ref_mOTU_v31_02942]	0.0000000000
 Staphylococcus massiliensis [ref_mOTU_v31_02943]	0.0000000000
 Psychroflexus gondwanensis [ref_mOTU_v31_02944]	0.0000000000
@@ -3239,7 +3240,7 @@ Vibrio sp. [ref_mOTU_v31_03273]	0.0000000000
 Vibrio maritimus/variabilis [ref_mOTU_v31_03274]	0.0000000000
 Vibrio furnissii [ref_mOTU_v31_03275]	0.0000000000
 Vibrio fluvialis [ref_mOTU_v31_03276]	0.0000000000
-Actinobacteria sp. [ref_mOTU_v31_03277]	0.1177791004
+Actinobacteria sp. [ref_mOTU_v31_03277]	0.5712880316
 Actinomyces urinae [ref_mOTU_v31_03278]	0.0000000000
 Actinomyces europaeus [ref_mOTU_v31_03279]	0.0000000000
 Peptostreptococcus sp. MV1 [ref_mOTU_v31_03280]	0.0000000000
@@ -3392,7 +3393,7 @@ Cardinium endosymbiont of Encarsia pergandiella [ref_mOTU_v31_03426]	0.000000000
 Cardinium endosymbiont of Bemisia tabaci [ref_mOTU_v31_03427]	0.0000000000
 [Collinsella] massiliensis/timonensis [ref_mOTU_v31_03428]	0.0000000000
 Corynebacterium sp. [ref_mOTU_v31_03429]	0.0000000000
-Corynebacterium ihumii/afermentans [ref_mOTU_v31_03430]	0.0424618099
+Corynebacterium ihumii/afermentans [ref_mOTU_v31_03430]	0.0000000000
 Corynebacterium fournierii [ref_mOTU_v31_03431]	0.0000000000
 Megasphaera massiliensis [ref_mOTU_v31_03432]	0.0000000000
 Megasphaera sp. MJR8396C [ref_mOTU_v31_03433]	0.0000000000
@@ -4284,7 +4285,7 @@ Lachnospiraceae bacterium [ref_mOTU_v31_04323]	0.0000000000
 Lachnospiraceae bacterium [ref_mOTU_v31_04324]	0.0000000000
 Bifidobacterium merycicum [ref_mOTU_v31_04325]	0.0000000000
 Bifidobacterium angulatum [ref_mOTU_v31_04326]	0.0000000000
-Kandleria vitulina [ref_mOTU_v31_04327]	0.0747552681
+Kandleria vitulina [ref_mOTU_v31_04327]	0.0000000000
 Mitsuokella jalaludinii [ref_mOTU_v31_04328]	0.0000000000
 Mitsuokella multacida [ref_mOTU_v31_04329]	0.0000000000
 Proteiniclasticum ruminis [ref_mOTU_v31_04330]	0.0000000000
@@ -5030,7 +5031,7 @@ Candidatus Kryptonium thompsoni [ref_mOTU_v31_05090]	0.0000000000
 Rheinheimera sp. KL1 [ref_mOTU_v31_05091]	0.0000000000
 Rheinheimera sp. A13L [ref_mOTU_v31_05092]	0.0000000000
 Thermotoga sp. [ref_mOTU_v31_05093]	0.0000000000
-Thermodesulfobacterium commune [ref_mOTU_v31_05094]	0.0060370873
+Thermodesulfobacterium commune [ref_mOTU_v31_05094]	0.0288704822
 Synergistales bacterium [ref_mOTU_v31_05095]	0.0000000000
 candidate division TA06 bacterium [ref_mOTU_v31_05096]	0.0000000000
 Oceanobacillus caeni [ref_mOTU_v31_05097]	0.0000000000
@@ -13286,7 +13287,7 @@ Gammaproteobacteria species incertae sedis [meta_mOTU_v31_13593]	0.0000000000
 Prevotella species incertae sedis [meta_mOTU_v31_13594]	0.0000000000
 Bacteria species incertae sedis [meta_mOTU_v31_13595]	0.0000000000
 Alteromonadaceae species incertae sedis [meta_mOTU_v31_13596]	0.0000000000
-Firmicutes species incertae sedis [meta_mOTU_v31_13597]	0.1104600026
+Firmicutes species incertae sedis [meta_mOTU_v31_13597]	0.0000000000
 Alphaproteobacteria species incertae sedis [meta_mOTU_v31_13598]	0.0000000000
 Dehalococcoidia species incertae sedis [meta_mOTU_v31_13599]	0.0000000000
 Bacteria species incertae sedis [meta_mOTU_v31_13600]	0.0000000000
@@ -34341,4 +34342,4 @@ Flavobacterium species incertae sedis [ext_mOTU_v31_34648]	0.0000000000
 Chitinophagaceae species incertae sedis [ext_mOTU_v31_34649]	0.0000000000
 Comamonadaceae species incertae sedis [ext_mOTU_v31_34650]	0.0000000000
 Flavobacterium species incertae sedis [ext_mOTU_v31_34651]	0.0000000000
-unassigned	0.0099938269
+unassigned	0.0265513068
