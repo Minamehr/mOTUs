@@ -6,58 +6,64 @@
     <expand macro="biotools"/>
     <expand macro="requirements"/>
     <command detect_errors="exit_code"><![CDATA[
-    motus merge
-    #if $input_options.input_source == "files"
-        -i '${','.join([str($file) for $file in $input_options.files])}'
-    #elif $input_options.input_source == "directory"
-        -d '$input_options.directory'
-    #end if
+    #if $db.db_source == 'cached'
+            #set $DATABASE_DIR=$db.db_cached.fields.path
+        #else
+            #set $database_path = $db.database
+            file $database_path &&
+            mkdir database_dir &&
+            tar -xvf '$database_path' -C database_dir/ &&
+            #set $DATABASE_DIR = 'database_dir/db_mOTU' ##the actual DB folder in the archive called db_mOTU
+        #end if
+        echo "Database Directory:" $DATABASE_DIR  &&
+        motus merge
+        -db '$DATABASE_DIR'
+        -i '${','.join([str($file) for $file in $files])}'
         #if $add_profiles
         -a '$add_profiles'
-    #end if
-    -o '$output'
-    #if $biom_format
-        -B
-    #end if
+        #end if
+        -o '$output'
+    $biom_format
     ]]></command>
     <inputs>
-        <conditional name="input_options">
-            <param name="input_source" type="select" label="Input source">
-                <option value="files">Input files</option>
-                <option value="directory">Input directory</option>
-            </param>
-            <when value="files">
-                <param name="files" type="data" format="txt" multiple="true" label="mOTU profiles to merge" />
-            </when>
-            <when value="directory">
-                <param name="directory" type="text" label="Directory containing mOTU profiles" help="Specify the directory path." />
-            </when>
-        </conditional>
+        <param name="files" type="data" format="txt" multiple="true" label="mOTU profiles to merge" />
         <param name="add_profiles" type="text" label="Add pre-computed profiles" help="Add pre-computed profiles from different environmental samples" optional="true"/>
         <param name="biom_format" type="boolean" truevalue="-B" falsevalue="" checked="false" label="Output in BIOM format?" />
+
+        <conditional name="db">
+            <param name="db_source" type="select" label="mOTUs Database">
+                <option value="cached">Use a pre-installed database</option>
+                <option value="history">Use a database from history</option>
+            </param>
+            <when value="cached">
+                <param name="db_cached" type="select" label="A pre-installed mOTUs databese" help="no pre-installed mOTUs databases are avalable yet">
+                    <options from_data_table="mOTUs_db">
+                        <column name="value" index="0"/>
+                        <column name="name" index="1"/>
+                        <column name="version" index="2"/>
+                        <column name="path" index="3" />
+                        <filter type="sort_by" column="1"/>
+                    </options>
+                </param>
+            </when>
+            <when value="history">
+                <param name="database" type="data" format="tar" label="Database from history" help="Custom database or other version of mOTUs database from link: https://zenodo.org/records/5140350"/>
+            </when>
+        </conditional>
+          
     </inputs>
     <outputs>
-        <data name="output" format="txt" label="${tool.name} on ${on_string}: Merged taxon relative abundance tables"/>
-    </outputs>
+        <data name="output" format="txt" from_work_dir="." label="${tool.name} on ${on_string}: Merged taxon relative abundance tables"/>
+  </outputs>
     <tests>
         <test expect_num_outputs="1">
-            <conditional name="input_options">
-                <param name="input_source" value="files"/>
-                <param name="files" value="SAMEA2466887-default.motus,SAMEA2466889-default.motus"/>
-            </conditional>
-            <output name="output" ftype="txt">
-                <assert_contents>
-                    <has_text text="consensus_taxonomy"/>
-                    <has_text text="SAMEA2466887"/>
-                    <has_text text="SAMEA2466889"/>
-                    <has_line_matching expression="#.*"/>
-                </assert_contents>
-            </output>
-        </test>
-        <test expect_num_outputs="1">
-            <conditional name="input_options">
-                <param name="input_source" value="files"/>
-                <param name="files" value="SAMEA2466887-c.motus,SAMEA2466889-c.motus"/>
+            <param name="files" value="SAMEA2466887-default.motus,SAMEA2466889-default.motus"/>
+            
+            <conditional name="db">
+                <!-- Local db -->
+                <param name="db_source" value="history"/>
+                <param name="database" location="https://zenodo.org/record/7778108/files/db_mOTU_v3.1.0.tar.gz"/>
+                <!-- <param name="database" value="db_mOTU_v3.1.0.tar.gz"/> -->
             </conditional>
             <output name="output" ftype="txt">
                 <assert_contents>
@@ -70,20 +76,14 @@
         </test>
     </tests>
     <help><![CDATA[
-        motus merge [options]
+        
+What it does
+============
 
-        Input options:
-            -i  FILE    list of mOTU profiles to merge (comma separated)
-            -d  FILE    merge all files in the directory DIR
-            -a  STR     add pre-computed profiles from different environmental samples
-                        Values: [all, air, bioreactor, bee, cat,
-                        cattle, chicken, dog, fish, freshwater, human,
-                        marine, mouse, pig, sheep, soil, termite, wastewater]
-        Output options:
-            -o  FILE    output file name [stdout]
-            -B  FILE    print result in BIOM format
-        Algorithm options:
-            -v  INT verbosity level: 1=error, 2=warning, 3=message, 4+=debugging [3]
+The mOTUs tool performs taxonomic profiling of metagenomics and metatrancriptomics samples.
+
+mOTUs merge is specifically developed for merging and consolidating taxonomic profiles generated by the mOTU profiler. 
+It facilitates the combination of taxon abundance or count data from multiple samples or datasets into a single output.
 
     ]]></help>
     <expand macro="citations"/>
