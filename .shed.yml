@@ -1,4 +1,4 @@
-name: mOTUs
+name: motus
 owner: bgruening
 description: Tool for profiling the abundance of microbial taxa.
 homepage_url: https://github.com/motu-tool/mOTUs
@@ -8,6 +8,5 @@ long_description:
     The tool works by analyzing metagenomic reads, offering high-resolution taxonomic profiling, and is particularly useful for microbial ecology studies and microbiome research.
 remote_repository_url: https://github.com/bgruening/galaxytools/tree/master/tools/mOTUs
 categories:
-- Metagenomics
-- Microbial Ecology
-- Taxonomic Profiling
+  - Metagenomics
+
