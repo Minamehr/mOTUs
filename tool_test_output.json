@@ -1,0 +1,115 @@
+{
+    "summary": {
+        "num_errors": 0,
+        "num_failures": 0,
+        "num_skips": 0,
+        "num_tests": 1
+    },
+    "tests": [
+        {
+            "data": {
+                "inputs": {
+                    "all_taxonomic_level": false,
+                    "biom_format": false,
+                    "cami_format": false,
+                    "full_rank_taxonomy": false,
+                    "full_species_name": false,
+                    "inputs|db|database": {
+                        "id": "e7c109c282808a4e",
+                        "src": "hda"
+                    },
+                    "inputs|db|db_source": "history",
+                    "inputs|input_type|reads_type|selector": "single",
+                    "inputs|input_type|reads_type|unpaired_reads": {
+                        "id": "9ba8fc334389d77e",
+                        "src": "hda"
+                    },
+                    "inputs|input_type|selector": "reads",
+                    "ncbi_taxonomy_ids": false,
+                    "ref_motus": false,
+                    "result_as_counts": false,
+                    "save_bam": false,
+                    "save_mgc": true
+                },
+                "job": {
+                    "command_line": "mkdir database_dir && tar -xvf '/tmp/tmpqg5mwq58/files/f/7/7/dataset_f7776f90-53f9-40a1-8f40-e17008a4578f.dat' -C database_dir/ && echo \"Database Directory:\" database_dir/db_mOTU  &&  motus profile -t ${GALAXY_SLOTS:-8} -n '' -db 'database_dir/db_mOTU' -s '/tmp/tmpqg5mwq58/files/2/0/9/dataset_20981022-3a64-44ca-bc75-e4ca196a2202.dat'   -o '/tmp/tmpqg5mwq58/job_working_directory/000/3/outputs/dataset_65d8d54c-eb62-4a65-9008-3a5c3d1acef4.dat' -M '/tmp/tmpqg5mwq58/job_working_directory/000/3/outputs/dataset_e3c661bc-8605-4960-bcd0-c5e4089d2af0.dat'",
+                    "command_version": "",
+                    "copied_from_job_id": null,
+                    "create_time": "2024-04-25T07:46:36.627104",
+                    "dependencies": [],
+                    "exit_code": 0,
+                    "external_id": "7118",
+                    "galaxy_version": "24.1",
+                    "handler": null,
+                    "history_id": "9ba8fc334389d77e",
+                    "id": "d6c3c330b31f07be",
+                    "inputs": {
+                        "inputs|db|database": {
+                            "id": "e7c109c282808a4e",
+                            "src": "hda",
+                            "uuid": "f7776f90-53f9-40a1-8f40-e17008a4578f"
+                        },
+                        "inputs|input_type|reads_type|unpaired_reads": {
+                            "id": "9ba8fc334389d77e",
+                            "src": "hda",
+                            "uuid": "20981022-3a64-44ca-bc75-e4ca196a2202"
+                        }
+                    },
+                    "job_messages": [],
+                    "job_metrics": [],
+                    "job_runner_name": null,
+                    "job_stderr": "",
+                    "job_stdout": "",
+                    "model_class": "Job",
+                    "output_collections": {},
+                    "outputs": {
+                        "output_mgc": {
+                            "id": "66ea39e77c277680",
+                            "src": "hda",
+                            "uuid": "e3c661bc-8605-4960-bcd0-c5e4089d2af0"
+                        },
+                        "output_motus": {
+                            "id": "d6c3c330b31f07be",
+                            "src": "hda",
+                            "uuid": "65d8d54c-eb62-4a65-9008-3a5c3d1acef4"
+                        }
+                    },
+                    "params": {
+                        "__input_ext": "\"input\"",
+                        "algorithm_advanced_options": "{\"advanced_options\": {\"__current_case__\": 1, \"customize_algorithm_options\": \"default_options\"}}",
+                        "all_taxonomic_level": "false",
+                        "biom_format": "false",
+                        "cami_format": "false",
+                        "chromInfo": "\"/home/mina/galaxy/tool-data/shared/ucsc/chrom/?.len\"",
+                        "dbkey": "\"?\"",
+                        "full_rank_taxonomy": "false",
+                        "full_species_name": "false",
+                        "inputs": "{\"db\": {\"__current_case__\": 1, \"database\": {\"values\": [{\"id\": 2, \"src\": \"hda\"}]}, \"db_source\": \"history\"}, \"input_type\": {\"__current_case__\": 0, \"reads_type\": {\"__current_case__\": 1, \"selector\": \"single\", \"unpaired_reads\": {\"values\": [{\"id\": 1, \"src\": \"hda\"}]}}, \"selector\": \"reads\"}, \"sample_name\": null}",
+                        "ncbi_taxonomy_ids": "false",
+                        "ref_motus": "false",
+                        "result_as_counts": "false",
+                        "save_bam": "false",
+                        "save_mgc": "true",
+                        "taxonomic_level": "\"kingdom\""
+                    },
+                    "state": "ok",
+                    "stderr": "\u001b[34m\u001b[1m2024-04-25 07:47:12\u001b[0m \u001b[34m\u001b[1mMap reads to the marker gene database\u001b[0m\n   \u001b[36mReads are aligned (by BWA) to marker gene sequences in the reference database\u001b[0m\n   \u001b[36mReads are filtered for:\u001b[0m\n   \u001b[36m - similarity to the reference gene (>97%), and\u001b[0m\n   \u001b[36m - length of the alignment (at least 75 nucleotides, -l option)\u001b[0m\n   \n   Number of detected lanes: 1\n\n   \u001b[1m2024-04-25 07:47:12\u001b[0m Run bwa on lane 1\n     map unpaired reads: 5.65 s\n   Total number of reads: 2495\n   Number of reads after filtering: 2469 (98.96 percent)\n   \n   Total time for mapping reads: 5.66 s\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:18\u001b[0m \u001b[34m\u001b[1mCalculate marker gene cluster (MGC) abundance\u001b[0m\n   \u001b[36mAbundance of MGCs are quantified by the number of inserts aligning to their\u001b[0m\n   \u001b[36mmember genes\u001b[0m\n   \u001b[36mInserts can either map to one MGC ('Unique mappers'), or map to many\u001b[0m\n   \u001b[36mMGCs from different species ('Multiple mappers')\n\u001b[0m\n   Total number of inserts: 2469\n     - Unique mappers: 2428\n     - Multiple mappers: 41\n     - Ignored multiple mapper without unique hit: 0\n   \n   Save mgc abundance table (provided with -M)\n   \n   Total time to calculate the MGCs: 5.21 s\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:23\u001b[0m \u001b[34m\u001b[1mGenerate mOTU profile\u001b[0m\n   \u001b[36mEach mOTU is composed of 6 to 10 MGCs\u001b[0m\n   \u001b[36mThe final mOTU insert count is obtained as the median of its MGC read counts\n\u001b[0m\n   At least 3 (-g) MGCs need to be detected to consider a mOTU as being present\n\n   Create taxonomy profile\n     Number of ref-mOTUs:  14\n     Number of meta-mOTUs: 1\n     Number of ext-mOTUs:  0\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:24\u001b[0m \u001b[34m\u001b[1mFinished computation\u001b[0m\n\u001b[34m\u001b[1m2024-04-25 07:47:24\u001b[0m \u001b[34m\u001b[1mTotal time: 11.85 s\u001b[0m\n",
+                    "stdout": "db_mOTU/\ndb_mOTU/db_mOTU_MAP_MGCs_to_mOTUs_in-line.tsv\ndb_mOTU/db_mOTU_padding_coordinates_NR.tsv\ndb_mOTU/db_mOTU_DB_NR.fasta.amb\ndb_mOTU/db_mOTU_DB_CEN.fasta.bwt\ndb_mOTU/db_mOTU_taxonomy_ref-mOTUs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.ann\ndb_mOTU/db_mOTU_DB_NR.fasta.pac\ndb_mOTU/db_mOTU_test/\ndb_mOTU/db_mOTU_test/test1_single.fastq\ndb_mOTU/db_mOTU_test/test1.motus\ndb_mOTU/db_mOTU_taxonomy_CAMI.tsv\ndb_mOTU/db_mOTU_MAP_MGCs_to_mOTUs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.pac\ndb_mOTU/db_mOTU_DB_NR.fasta\ndb_mOTU/db_mOTU_DB_NR.fasta.sa\ndb_mOTU/db_mOTU_MAP_genes_to_MGCs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.amb\ndb_mOTU/db_mOTU_taxonomy_ref-mOTUs_short_names.tsv\ndb_mOTU/db_mOTU_DB_NR.fasta.bwt\ndb_mOTU/db_mOTU_padding_coordinates_CEN.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.annotations\ndb_mOTU/db_mOTU_bam_header_NR\ndb_mOTU/db_mOTU_taxonomy_meta-mOTUs.tsv\ndb_mOTU/db_mOTU_genes_length_NR\ndb_mOTU/db_mOTU_versions\ndb_mOTU/db_mOTU_DB_CEN.fasta\ndb_mOTU/db_mOTU_DB_NR.fasta.ann\ndb_mOTU/db_mOTU_bam_header_CEN\ndb_mOTU/db_mOTU_DB_CEN.fasta.sa\ndb_mOTU/README\ndb_mOTU/public_profiles/\ndb_mOTU/public_profiles/mOTUs.profiles_environments.gz\ndb_mOTU/public_profiles/mOTUs.profiles.gz\nDatabase Directory: database_dir/db_mOTU\n",
+                    "tool_id": "motus_profiler",
+                    "tool_stderr": "\u001b[34m\u001b[1m2024-04-25 07:47:12\u001b[0m \u001b[34m\u001b[1mMap reads to the marker gene database\u001b[0m\n   \u001b[36mReads are aligned (by BWA) to marker gene sequences in the reference database\u001b[0m\n   \u001b[36mReads are filtered for:\u001b[0m\n   \u001b[36m - similarity to the reference gene (>97%), and\u001b[0m\n   \u001b[36m - length of the alignment (at least 75 nucleotides, -l option)\u001b[0m\n   \n   Number of detected lanes: 1\n\n   \u001b[1m2024-04-25 07:47:12\u001b[0m Run bwa on lane 1\n     map unpaired reads: 5.65 s\n   Total number of reads: 2495\n   Number of reads after filtering: 2469 (98.96 percent)\n   \n   Total time for mapping reads: 5.66 s\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:18\u001b[0m \u001b[34m\u001b[1mCalculate marker gene cluster (MGC) abundance\u001b[0m\n   \u001b[36mAbundance of MGCs are quantified by the number of inserts aligning to their\u001b[0m\n   \u001b[36mmember genes\u001b[0m\n   \u001b[36mInserts can either map to one MGC ('Unique mappers'), or map to many\u001b[0m\n   \u001b[36mMGCs from different species ('Multiple mappers')\n\u001b[0m\n   Total number of inserts: 2469\n     - Unique mappers: 2428\n     - Multiple mappers: 41\n     - Ignored multiple mapper without unique hit: 0\n   \n   Save mgc abundance table (provided with -M)\n   \n   Total time to calculate the MGCs: 5.21 s\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:23\u001b[0m \u001b[34m\u001b[1mGenerate mOTU profile\u001b[0m\n   \u001b[36mEach mOTU is composed of 6 to 10 MGCs\u001b[0m\n   \u001b[36mThe final mOTU insert count is obtained as the median of its MGC read counts\n\u001b[0m\n   At least 3 (-g) MGCs need to be detected to consider a mOTU as being present\n\n   Create taxonomy profile\n     Number of ref-mOTUs:  14\n     Number of meta-mOTUs: 1\n     Number of ext-mOTUs:  0\n   \n\u001b[34m\u001b[1m2024-04-25 07:47:24\u001b[0m \u001b[34m\u001b[1mFinished computation\u001b[0m\n\u001b[34m\u001b[1m2024-04-25 07:47:24\u001b[0m \u001b[34m\u001b[1mTotal time: 11.85 s\u001b[0m\n",
+                    "tool_stdout": "db_mOTU/\ndb_mOTU/db_mOTU_MAP_MGCs_to_mOTUs_in-line.tsv\ndb_mOTU/db_mOTU_padding_coordinates_NR.tsv\ndb_mOTU/db_mOTU_DB_NR.fasta.amb\ndb_mOTU/db_mOTU_DB_CEN.fasta.bwt\ndb_mOTU/db_mOTU_taxonomy_ref-mOTUs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.ann\ndb_mOTU/db_mOTU_DB_NR.fasta.pac\ndb_mOTU/db_mOTU_test/\ndb_mOTU/db_mOTU_test/test1_single.fastq\ndb_mOTU/db_mOTU_test/test1.motus\ndb_mOTU/db_mOTU_taxonomy_CAMI.tsv\ndb_mOTU/db_mOTU_MAP_MGCs_to_mOTUs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.pac\ndb_mOTU/db_mOTU_DB_NR.fasta\ndb_mOTU/db_mOTU_DB_NR.fasta.sa\ndb_mOTU/db_mOTU_MAP_genes_to_MGCs.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.amb\ndb_mOTU/db_mOTU_taxonomy_ref-mOTUs_short_names.tsv\ndb_mOTU/db_mOTU_DB_NR.fasta.bwt\ndb_mOTU/db_mOTU_padding_coordinates_CEN.tsv\ndb_mOTU/db_mOTU_DB_CEN.fasta.annotations\ndb_mOTU/db_mOTU_bam_header_NR\ndb_mOTU/db_mOTU_taxonomy_meta-mOTUs.tsv\ndb_mOTU/db_mOTU_genes_length_NR\ndb_mOTU/db_mOTU_versions\ndb_mOTU/db_mOTU_DB_CEN.fasta\ndb_mOTU/db_mOTU_DB_NR.fasta.ann\ndb_mOTU/db_mOTU_bam_header_CEN\ndb_mOTU/db_mOTU_DB_CEN.fasta.sa\ndb_mOTU/README\ndb_mOTU/public_profiles/\ndb_mOTU/public_profiles/mOTUs.profiles_environments.gz\ndb_mOTU/public_profiles/mOTUs.profiles.gz\nDatabase Directory: database_dir/db_mOTU\n",
+                    "update_time": "2024-04-25T07:47:30.306371",
+                    "user_email": "planemo@galaxyproject.org"
+                },
+                "status": "success",
+                "test_index": 0,
+                "time_seconds": 1187.97025680542,
+                "tool_id": "motus_profiler",
+                "tool_version": "3.1.0+galaxy0"
+            },
+            "has_data": true,
+            "id": "motus_profiler-0"
+        }
+    ],
+    "version": "0.1"
+}
